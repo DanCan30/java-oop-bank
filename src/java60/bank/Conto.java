@@ -5,7 +5,7 @@ import java.util.Random;
 public class Conto {
 
 	private int bankAccount;
-	public String ownerName;
+	private String ownerName = "";
 	private int currency = 0;
 	
 	Random rand;
@@ -13,7 +13,7 @@ public class Conto {
 	public Conto(String ownerName) {
 		rand = new Random();
 		this.bankAccount = rand.nextInt(1000, 10000);
-		this.ownerName = ownerName;
+		setOwnerName(ownerName);
 	}
 	
 	//Getters and setters
@@ -31,7 +31,15 @@ public class Conto {
 	}
 	
 	public void setOwnerName(String ownerName) {
-		this.ownerName = ownerName;
+		
+		String[] fullName = ownerName.split(" ");
+		
+		for(int i = 0; i < fullName.length; i++) {
+			String word = fullName[i];
+			this.ownerName += word.substring(0, 1).toUpperCase() + word.substring(1);
+		}
+		
+		this.ownerName += this.bankAccount;
 	}
 
 	public int getCurrency() {
@@ -51,7 +59,7 @@ public class Conto {
 			
 			this.currency -= moneyToGet;
 			return moneyToGet + "€ have been successfully withdrawn from your account. You have " 
-					+ currency + "€ left on your account.";
+					+ currency + "€ left.";
 		} else {
 			
 			return "You tried to withdraw " + moneyToGet + "€, but do not have enough currency. "

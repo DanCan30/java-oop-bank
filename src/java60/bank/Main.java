@@ -8,7 +8,7 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Insert your name to create a new account: ");
+		System.out.print("Insert your full name to create a new account: ");
 		String ownerName = sc.nextLine();
 		
 		Conto conto = new Conto(ownerName);
@@ -20,7 +20,7 @@ public class Main {
 		int moneyToAdd = sc.nextInt();
 		
 		conto.addMoney(moneyToAdd);
-		System.out.println(conto.getOwnerName() + ", \nYour currency: " + conto.getCurrency() + "€");
+		System.out.println(conto.getOwnerName() + ", \nYour actual currency is: " + conto.getCurrency() + "€");
 		
 		System.out.println("withdraw: ");
 		int moneyToWithdraw = sc.nextInt();
