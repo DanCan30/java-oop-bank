@@ -22,9 +22,6 @@ public class Conto {
 		return bankAccount;
 	}
 	
-	public void setBankAccount(int bankAccount) {
-		 this.bankAccount = bankAccount;
-	}
 	
 	public String getOwnerName() {
 		return ownerName;

@@ -22,7 +22,7 @@ public class Main {
 		conto.addMoney(moneyToAdd);
 		System.out.println(conto.getOwnerName() + ", \nYour actual currency is: " + conto.getCurrency() + "€");
 		
-		System.out.println("withdraw: ");
+		System.out.println("Withdraw: ");
 		int moneyToWithdraw = sc.nextInt();
 		
 		String withdrawMessage = conto.getMoney(moneyToWithdraw);
